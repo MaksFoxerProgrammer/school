@@ -1,0 +1,32 @@
+{% extends 'main/index.html' %}
+{% load static %}
+
+
+{% block content %}
+    <table border="1" width="100%" cellpadding="5">
+    <tr> <a href= "{% url 'home' %}"> Назад </a> </tr>
+    <tr>
+        {% comment %} <th> Организация </th> {% endcomment %}
+        <th> День недели </th> 
+        <th> № урока </th>
+        <th> Класс </th>
+        <th> Предмет </th>
+        <th> Кабинет </th>
+        <th> Учитель </th>
+    </tr>
+ 
+    {% for item in hrefs %}
+    <tr>
+       {% comment %} <td> {{ item.org }} </td> {% endcomment %}
+       <td> {{ item.d }} </td>
+       <td> {{ item.numb }} </td>
+       <td> {{ item.cls }} </td>
+       <td> {{ item.subj }} </td>
+       <td> {{ item.room }} </td>
+       <td> {{ item.teacher }} </td>
+    </tr>
+    {% endfor %}
+ 
+  </table>
+
+{% endblock %}

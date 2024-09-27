@@ -1,0 +1,25 @@
+{% extends 'main/index.html' %}
+{% load static %}
+
+
+{% block content %}
+    <table border="1" width="100%" cellpadding="5">
+    <tr> <a href= "{% url 'view-db' %}"> Назад </a> </tr>
+    <tr>
+        {% for title in title_caps %}
+            <th> {{ title }} </th>
+        {% endfor %}
+    </tr>
+ 
+    {% for user in objects %}
+    <tr>
+        <td> {{ user.pk }} </td>
+        <td> {{ user.username }} </td>
+        <td> {{ user.is_staff }} </td>
+        <td> {{ user.password }} </td>
+    </tr>
+    {% endfor %}
+ 
+  </table>
+
+{% endblock %}

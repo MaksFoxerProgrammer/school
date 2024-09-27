@@ -1,0 +1,23 @@
+{% extends 'main/index.html' %}
+{% load static %}
+
+
+{% block content %}
+  <table border="1" width="100%" cellpadding="5">
+    <tr> <a href= "{% url 'home' %}"> Главная </a> </tr>
+    <tr>
+      <th><a>{{ title }}</a></th>
+    </tr>
+
+    {% for item in data %}
+      <tr>
+
+      {% for col in item.hrefs %}
+        <td><a href="{% url 'home' %}{{ col.href}}" >{{ col.text }}</a></td>
+      {% endfor %}
+
+      </tr>
+    {% endfor %}
+
+  </table>
+{% endblock %}

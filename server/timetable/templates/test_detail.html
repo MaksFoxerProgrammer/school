@@ -1,0 +1,32 @@
+{% extends 'main/index.html' %}
+{% load static %}
+
+
+{% block content %}
+  <table border="1" width="100%" cellpadding="5">
+   <tr> <a href= "#"> Назад </a> </tr>
+   <tr>
+    <th><a>Созданные сущности: :</a></th>
+   </tr>
+   <tr>
+      <td>
+         <button onclick="window.location.href = '#';">Вернусться на главную</button>
+         <button onclick="window.location.href = '#{{ ref_again }}';">{{ again }}</button>
+      </td>
+     </tr>
+   {% for item in hrefs %}
+   <tr>
+    <td><a>{{ item }}</a></td>
+   </tr>
+   {% endfor %}
+   <tr>
+    <td>
+       <button onclick="window.location.href = '#';">Вернусться на главную</button>
+       <button onclick="window.location.href = '#{{ ref_again }}';">{{ again }}</button>
+    </td>
+   </tr>
+ </table>
+
+
+
+ {% endblock %}
